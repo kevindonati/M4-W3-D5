@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "eventi")
+@Table(name = "catalogo")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Catalogo {
     @Id
@@ -14,10 +14,10 @@ public abstract class Catalogo {
     private UUID id;
 
     @Column(name = "codice_isbn", nullable = false)
-    private int codiceIsbn;
+    private long codiceIsbn;
 
     @Column(nullable = false)
-    private int titolo;
+    private String titolo;
 
     @Column(name = "anno_di_pubblicazione")
     private int annoDiPubblicazione;
@@ -31,7 +31,7 @@ public abstract class Catalogo {
     }
 
     // COSTRUTTORE
-    public Catalogo(int codiceIsbn, int titolo, int annoDiPubblicazione, int numeroPagine) {
+    public Catalogo(long codiceIsbn, String titolo, int annoDiPubblicazione, int numeroPagine) {
         this.codiceIsbn = codiceIsbn;
         this.titolo = titolo;
         this.annoDiPubblicazione = annoDiPubblicazione;

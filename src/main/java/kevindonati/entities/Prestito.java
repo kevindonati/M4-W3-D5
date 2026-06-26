@@ -28,7 +28,7 @@ public class Prestito {
     @Column(name = "data_restituzione_prevista", nullable = false)
     private LocalDate dataRestituzionePrevista;
 
-    @Column(name = "data_restituzione_effettiva", nullable = false)
+    @Column(name = "data_restituzione_effettiva", nullable = true)
     private LocalDate dataRestituzioneEffettiva;
 
     // COSTRUTTORE VUOTO
@@ -37,12 +37,11 @@ public class Prestito {
     }
 
     // COSTRUTTORE
-    public Prestito(Utente utente, Catalogo elementoPrestato, LocalDate dataInizioPrestito, LocalDate dataRestituzioneEffettiva) {
+    public Prestito(Utente utente, Catalogo elementoPrestato, LocalDate dataInizioPrestito) {
         this.utente = utente;
         this.elementoPrestato = elementoPrestato;
         this.dataInizioPrestito = dataInizioPrestito;
         this.dataRestituzionePrevista = dataInizioPrestito.plusDays(30);
-        this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
     }
 
     @Override

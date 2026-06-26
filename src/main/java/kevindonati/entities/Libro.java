@@ -20,7 +20,7 @@ public class Libro extends Catalogo {
     }
 
     // COSTRUTTORE
-    public Libro(int codiceIsbn, int titolo, int annoDiPubblicazione, int numeroPagine, String autore, Genere genere) {
+    public Libro(long codiceIsbn, String titolo, int annoDiPubblicazione, int numeroPagine, String autore, Genere genere) {
         super(codiceIsbn, titolo, annoDiPubblicazione, numeroPagine);
         this.autore = autore;
         this.genere = genere;

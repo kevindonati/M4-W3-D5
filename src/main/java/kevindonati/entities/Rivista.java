@@ -18,7 +18,7 @@ public class Rivista extends Catalogo {
     }
 
     // COSTRUTTORE
-    public Rivista(int codiceIsbn, int titolo, int annoDiPubblicazione, int numeroPagine, Periodicita periodicita) {
+    public Rivista(long codiceIsbn, String titolo, int annoDiPubblicazione, int numeroPagine, Periodicita periodicita) {
         super(codiceIsbn, titolo, annoDiPubblicazione, numeroPagine);
         this.periodicita = periodicita;
     }
